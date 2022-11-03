@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce Product Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="popup-overlay | hidden"></div>
+    <header class="header">
+      <div class="container">
+        <div
+          class="header__container | d-flex align-items-center justify-content-sb"
+        >
+          <div class="header__column column__left | d-flex align-items-center">
+            <div class="toggle-menu">
+              <img
+                src="images/icon-menu.svg"
+                aria-label="hamburger-menu"
+                alt="hamburger menu"
+                class="hamburger-menu"
+              />
+              <img
+                src="images/icon-close.svg"
+                aria-label="close button"
+                alt="close button"
+                class="close-btn | hidden"
+              />
+            </div>
+            <div class="logo">
+              <img src="images/logo.svg" aria-label="logo" alt="logo" />
+            </div>
+            <div class="overlay | hidden"></div>
+            <nav class="navbar">
+              <ul
+                role="list"
+                class="primary-nav | d-flex align-items-center fw-bold"
+              >
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header__column column__right | d-flex align-items-center">
+            <div class="cart">
+              <img
+                src="images/icon-cart.svg"
+                aria-label="shopping cart icon"
+                alt="shopping cart icon"
+              />
+              <span class="cart-label">0</span>
+            </div>
+            <div class="avatar">
+              <img
+                src="images/image-avatar.png"
+                aria-label="profile image"
+                alt="profile image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="cart__container | hidden">
+          <div class="cart__content">
+            <div class="cart__title | fw-bold">
+              <p>Cart</p>
+            </div>
+            <div class="container">
+              <div class="cart-items__container"></div>
+              <div class="checkout-btn | text-align-center">
+                <button id="checkout-btn" class="btn--outline">Checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main__container | d-flex justify-content-sb">
+          <div class="main__column column__left">
+            <div class="main__gallery gallery | d-flex">
+              <div class="navigation-btns | d-flex justify-content-sb">
+                <button class="prevBtn">
+                  <img
+                    src="images/icon-previous.svg"
+                    aria-label="go to previous item"
+                    alt="previous"
+                  />
+                </button>
+                <button class="nextBtn">
+                  <img
+                    src="images/icon-next.svg"
+                    aria-label="go to next item"
+                    alt="next"
+                  />
+                </button>
+              </div>
+
+              <div class="slide">
+                <img
+                  src="images/image-product-1.jpg"
+                  aria-label="sneakers"
+                  alt="sneakers"
+                  data-id="1"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="images/image-product-2.jpg"
+                  aria-label="sneakers"
+                  alt="sneakers"
+                  data-id="2"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="images/image-product-3.jpg"
+                  aria-label="sneakers"
+                  alt="sneakers"
+                  data-id="3"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="images/image-product-4.jpg"
+                  aria-label="sneakers"
+                  alt="sneakers"
+                  data-id="4"
+                />
+              </div>
+            </div>
+            <div class="gallery--thumbnail | d-flex justify-content-sb">
+              <div class="thumbnail">
+                <img
+                  src="images/image-product-1-thumbnail.jpg"
+                  aria-label="sneakers thumbnail"
+                  alt="sneakers thumbnail"
+                  data-id="1"
+                />
+              </div>
+              <div class="thumbnail">
+                <img
+                  src="images/image-product-2-thumbnail.jpg"
+                  aria-label="sneakers thumbnail"
+                  alt="sneakers thumbnail"
+                  data-id="2"
+                />
+              </div>
+              <div class="thumbnail">
+                <img
+                  src="images/image-product-3-thumbnail.jpg"
+                  aria-label="sneakers thumbnail"
+                  alt="sneakers thumbnail"
+                  data-id="3"
+                />
+              </div>
+              <div class="thumbnail">
+                <img
+                  src="images/image-product-4-thumbnail.jpg"
+                  aria-label="sneakers thumbnail"
+                  alt="sneakers thumbnail"
+                  data-id="4"
+                />
+              </div>
+            </div>
+          </div>
+          <!--main__column column__left-->
+          <div class="popup | hidden">
+            <div class="main__column column__left | d-flex align-items-center">
+              <svg
+                class="close-btn"
+                width="14"
+                height="15"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="close image preview"
+              >
+                <path
+                  d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+              <div class="gallery | d-flex">
+                <div class="navigation-btns | d-flex justify-content-sb">
+                  <button class="prevBtn">
+                    <svg
+                      width="13"
+                      height="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-label="go to previous item"
+                    >
+                      <path
+                        d="M11 1 3 9l8 8"
+                        stroke-width="3"
+                        fill="none"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <button class="nextBtn">
+                    <svg
+                      width="13"
+                      height="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-label="go to next item"
+                    >
+                      <path
+                        d="m2 1 8 8-8 8"
+                        stroke-width="3"
+                        fill="none"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="slides | d-flex">
+                  <div class="slide">
+                    <img
+                      src="images/image-product-1.jpg"
+                      aria-label="sneakers"
+                      alt="sneakers"
+                      data-id="1"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="images/image-product-2.jpg"
+                      aria-label="sneakers"
+                      alt="sneakers"
+                      data-id="2"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="images/image-product-3.jpg"
+                      aria-label="sneakers"
+                      alt="sneakers"
+                      data-id="3"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="images/image-product-4.jpg"
+                      aria-label="sneakers"
+                      alt="sneakers"
+                      data-id="4"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="gallery--thumbnail | d-flex justify-content-sb">
+                <div class="thumbnail">
+                  <img
+                    src="images/image-product-1-thumbnail.jpg"
+                    aria-label="sneakers thumbnail"
+                    alt="sneakers thumbnail"
+                    data-id="1"
+                  />
+                </div>
+                <div class="thumbnail">
+                  <img
+                    src="images/image-product-2-thumbnail.jpg"
+                    aria-label="sneakers thumbnail"
+                    alt="sneakers thumbnail"
+                    data-id="2"
+                  />
+                </div>
+                <div class="thumbnail">
+                  <img
+                    src="images/image-product-3-thumbnail.jpg"
+                    aria-label="sneakers thumbnail"
+                    alt="sneakers thumbnail"
+                    data-id="3"
+                  />
+                </div>
+                <div class="thumbnail">
+                  <img
+                    src="images/image-product-4-thumbnail.jpg"
+                    aria-label="sneakers thumbnail"
+                    alt="sneakers thumbnail"
+                    data-id="4"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main__column column__right | d-flex align-items-center">
+            <div class="main__content">
+              <div class="container">
+                <h1 class="title">Sneaker Company</h1>
+                <h2 class="subtitle">
+                  Fall Limited Edition<br />
+                  Sneakers
+                </h2>
+                <p>
+                  These low-profile sneakers are your perfect casual wear
+                  companion. Featuring a durable rubber outer sole, they'll
+                  withstand everything the weather can offer.
+                </p>
+                <div class="main__content--price | d-flex justify-content-sb">
+                  <div class="column__left">
+                    <span class="curr-item-price | fw-bold">$125.00 </span>
+                    <span class="span--outline | fw-bold">50%</span>
+                  </div>
+                  <div class="column__right">
+                    <span class="text-style-line-through">$250.00</span>
+                  </div>
+                </div>
+                <div class="main__content--quantity | d-flex">
+                  <div class="add-quantity | d-flex justify-content-sb fw-bold">
+                    <button class="decrementBtn" aria-label="decrement button">
+                      -
+                    </button>
+                    <input id="quantity" type="number" value="1" />
+                    <button class="incrementBtn" aria-label="increment button">
+                      +
+                    </button>
+                  </div>
+                  <div class="add-to-cart-btn | text-align-center btn--outline">
+                    <button id="add-to-cart-btn" aria-label="add item to cart">
+                      <svg
+                        width="22"
+                        height="20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                          fill="hsl(0, 0%, 100%)"
+                          fill-rule="nonzero"
+                        />
+                      </svg>
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
