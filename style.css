@@ -90,26 +90,6 @@ button {
   font: inherit;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  .logo img {
-    filter: contrast(30%);
-  }
-
-  .nextBtn img,
-  .prevBtn img {
-    filter: contrast(0%);
-  }
-
-  .add-to-cart-btn > button,
-  .checkout-btn > button {
-    box-shadow: 0px 5px 20px -15px var(--clr-primary-100);
-  }
-
-  .cart__container {
-    box-shadow: 2px 5px 5px -2px var(--clr-neutral-600);
-  }
-} */
-
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -250,7 +230,9 @@ main > .container {
 }
 
 .logo,
-.cart {
+.cart,
+.incrementBtn,
+.decrementBtn{
   cursor: pointer;
 }
 
