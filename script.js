@@ -26,7 +26,6 @@ const checkoutBtn = document.querySelector(".checkout-btn");
 const currItemPrice = document.querySelector(".curr-item-price").textContent;
 const cartContainer = document.querySelector(".cart__container");
 
-// let counter = +quantityInput.value;
 let counter = 1;
 
 mobileToggleNav();
@@ -87,8 +86,6 @@ function moveSlides() {
       thumbnail.addEventListener("click", (e) => {
         const selected = e.target;
         if (selected.parentElement.classList.contains("thumbnail")) {
-          popup.classList.remove("hidden");
-          popupOverlay.classList.remove("hidden");
           currentSlidePosition = Number(selected.dataset.id - 1);
           goToSlide(currentSlidePosition);
         }
@@ -122,6 +119,13 @@ function moveSlides() {
 
   nextBtns.forEach((btn) => btn.addEventListener("click", nextSlide));
   prevBtns.forEach((btn) => btn.addEventListener("click", prevSlide));
+
+  mainSlides.forEach((slide) => {
+    slide.addEventListener("click", function () {
+      popup.classList.remove("hidden");
+      popupOverlay.classList.remove("hidden");
+    });
+  });
 
   gotToThumbnail();
 }
@@ -187,30 +191,21 @@ function checkInCart(product) {
   itemsInCart.push(product);
 }
 
-// addToCartBtn.addEventListener("click", addToCart);
-
 function addToCart() {
   let currentProduct =
     mainSlides[currentSlidePosition].children[0].getAttribute("src");
   let productID = mainSlides[currentSlidePosition].children[0].dataset.id;
   let productPrice = +currItemPrice.slice(1, 4);
-  // let ProductQuantity = +quantityInput.value;
-  // console.log(ProductQuantity);
   const cartItems = {
     id: productID,
     src: currentProduct,
     price: productPrice,
     quantity: counter,
   };
-  // counter = 1;
-  // let getQuantity = localStorage.getItem("quantity");
 
   checkInCart(cartItems);
   localStorage.setItem("data", JSON.stringify(itemsInCart));
-  // console.log(itemsInCart);
   updateCartHTML();
-
-  // cartLabel.innerText = calculations();
   calculations();
 }
 
