@@ -90,6 +90,26 @@ button {
   font: inherit;
 }
 
+/* Not working as expected - @media (prefers-color-scheme: dark) {
+  .logo img {
+    filter: contrast(30%);
+  }
+
+  .nextBtn img,
+  .prevBtn img {
+    filter: contrast(0%);
+  }
+
+  .add-to-cart-btn > button,
+  .checkout-btn > button {
+    box-shadow: 0px 5px 20px -15px var(--clr-primary-100);
+  }
+
+  .cart__container {
+    box-shadow: 2px 5px 5px -2px var(--clr-neutral-600);
+  }
+} */
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -144,7 +164,7 @@ main > .container {
 
 .header__container {
   --spacer-md: 1.675em;
-  padding-block: var(--spacer-md);
+  padding-top: var(--spacer-md);
 }
 
 .navbar {
@@ -230,9 +250,7 @@ main > .container {
 }
 
 .logo,
-.cart,
-.incrementBtn,
-.decrementBtn{
+.cart {
   cursor: pointer;
 }
 
@@ -301,6 +319,10 @@ main > .container {
   flex-direction: column;
   width: 100%;
   margin-bottom: var(--spacer-4em);
+}
+
+.main__gallery > .slide {
+  pointer-events: none;
 }
 
 .gallery {
@@ -440,7 +462,6 @@ input[type="number"] {
 }
 
 .main__content {
-  max-width: 650px;
   margin: 0 auto;
 }
 
@@ -574,7 +595,14 @@ input[type="number"]::-webkit-outer-spin-button {
     display: none;
   }
 
+  .navigation-btns {
+    display: none;
+  }
+
   .header__container {
+    --spacer-md: 1.5em;
+    padding-bottom: var(--spacer-md);
+
     border-bottom: 1px solid var(--clr-neutral-300);
   }
 
@@ -682,6 +710,11 @@ input[type="number"]::-webkit-outer-spin-button {
 
   .main__content {
     max-width: 45ch;
+  }
+
+  .main__gallery > .slide {
+    pointer-events: all;
+    cursor: pointer;
   }
 
   .main__content > * {
