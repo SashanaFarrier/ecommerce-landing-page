@@ -144,7 +144,7 @@ main > .container {
 
 .header__container {
   --spacer-md: 1.675em;
-  padding: var(--spacer-md);
+  padding-block: var(--spacer-md);
 }
 
 .navbar {
