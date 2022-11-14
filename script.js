@@ -52,10 +52,10 @@ function mobileToggleNav() {
   });
 
   navOverlay.addEventListener("click", function () {
-    navbar.classList.toggle("active");
-    closeBtn.classList.toggle("hidden");
+    navbar.classList.remove("active");
+    navCloseBtn.classList.toggle("hidden");
     hamburgerMenu.classList.toggle("hidden");
-    navOverlay.classList.toggle("hidden");
+    navOverlay.classList.add("hidden");
   });
 }
 
